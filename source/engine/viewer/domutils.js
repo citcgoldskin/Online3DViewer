@@ -113,6 +113,8 @@ export function SetDomElementHeight (element, height)
 
 export function GetDomElementOuterWidth (element)
 {
+    if(!element) return 0;
+
     let style = getComputedStyle (element);
     return element.offsetWidth + GetIntegerFromStyle (style.marginLeft) + GetIntegerFromStyle (style.marginRight);
 }

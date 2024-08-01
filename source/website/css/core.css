@@ -11,8 +11,6 @@
 
 html, body
 {
-	color: var(--ov_foreground_color);
-	background: var(--ov_background_color);
 	font-size: 16px;
 	font-family: Quicksand, Helvetica, sans-serif;
 	width: 100%;
@@ -28,21 +26,11 @@ a
 	text-decoration: none;
 }
 
-img
-{
-	display: block;
-}
 
 ol, ul
 {
 	padding: 0px 25px;
 	margin: 0px;
-}
-
-li
-{
-	margin: 10px 0px;
-	line-height: 25px;
 }
 
 .only_on_model

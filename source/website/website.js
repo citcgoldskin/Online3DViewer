@@ -93,7 +93,7 @@ class WebsiteLayouter
 
         let newLeftWidth = leftWidth + leftDiff;
         let newRightWidth = rightWidth + rightDiff;
-        let contentNewWidth = windowWidth - newLeftWidth - newRightWidth;
+        let contentNewWidth = windowWidth - newLeftWidth - newRightWidth - 100;
 
         let isNavigatorVisible = this.navigator.IsPanelsVisible ();
         let isSidebarVisible = this.sidebar.IsPanelsVisible ();
@@ -141,7 +141,7 @@ class WebsiteLayouter
             safetyMargin = 1;
         }
 
-        let contentWidth = windowWidth - leftWidth - rightWidth;
+        let contentWidth = windowWidth - leftWidth - rightWidth - GetDomElementOuterWidth(this.parameters.sidebarMenu) - 50;
         let contentHeight = windowHeight - headerHeight;
 
         if (contentWidth < this.limits.minCanvasWidth) {
@@ -748,6 +748,7 @@ export class Website
         });
 
         let selectedTheme = (this.settings.themeId === Theme.Light ? 1 : 0);
+        /*
         AddRadioButton (this.toolbar, ['dark_mode', 'light_mode'], [Loc ('Dark mode'), Loc ('Light mode')], selectedTheme, ['align_right'], (buttonIndex) => {
             if (buttonIndex === 0) {
                 this.settings.themeId = Theme.Dark;
@@ -757,6 +758,7 @@ export class Website
             HandleEvent ('theme_changed', this.settings.themeId === Theme.Light ? 'light' : 'dark');
             this.SwitchTheme (this.settings.themeId, true);
         });
+        */
 
         this.parameters.fileInput.addEventListener ('change', (ev) => {
             if (ev.target.files.length > 0) {

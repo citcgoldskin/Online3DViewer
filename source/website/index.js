@@ -48,7 +48,7 @@ export function RegisterToolbarPlugin (plugin)
 
 export function StartWebsite (externalLibLocation)
 {
-    window.addEventListener ('load', () => {
+//    window.addEventListener ('load', () => {
         if (window.self !== window.top) {
             let noEmbeddingDiv = AddDiv (document.body, 'noembed');
             AddDiv (noEmbeddingDiv, null, Loc ('Embedding Online 3D Viewer in an iframe is not supported.'));
@@ -61,7 +61,7 @@ export function StartWebsite (externalLibLocation)
         SetExternalLibLocation (externalLibLocation);
 
         document.getElementById ('intro_dragdrop_text').innerHTML = Loc ('Drag and drop 3D models here.');
-        document.getElementById ('intro_formats_title').innerHTML = Loc ('Check an example file:');
+        // document.getElementById ('intro_formats_title').innerHTML = Loc ('Check an example file:');
 
         let website = new Website ({
             headerDiv : document.getElementById ('header'),
@@ -78,10 +78,11 @@ export function StartWebsite (externalLibLocation)
             sidebarDiv : document.getElementById ('main_sidebar'),
             sidebarSplitterDiv : document.getElementById ('main_sidebar_splitter'),
             viewerDiv : document.getElementById ('main_viewer'),
-            fileInput : document.getElementById ('open_file')
+            fileInput : document.getElementById ('open_file'),
+            sidebarMenu : document.getElementById ('sidebarMenu')
         });
         website.Load ();
-    });
+//    });
 }
 
 export function StartEmbed (externalLibLocation)

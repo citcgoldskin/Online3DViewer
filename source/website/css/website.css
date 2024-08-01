@@ -82,7 +82,6 @@ div.intro_content
 
 div.intro div.intro_logo
 {
-	border-bottom: 1px solid var(--ov_border_color);
 	padding-bottom: 30px;
 	margin-bottom: 30px;
 }
