@@ -23,6 +23,13 @@ import './css/sidebar.css';
 import './css/website.css';
 import './css/embed.css';
 
+let WebsiteOuter = {};
+
+export function getWebsite()
+{
+    return WebsiteOuter;
+}
+
 export const UI = {
     ButtonDialog,
     ProgressDialog,
@@ -63,7 +70,7 @@ export function StartWebsite (externalLibLocation)
         document.getElementById ('intro_dragdrop_text').innerHTML = Loc ('Drag and drop 3D models here.');
         // document.getElementById ('intro_formats_title').innerHTML = Loc ('Check an example file:');
 
-        let website = new Website ({
+        WebsiteOuter = new Website ({
             headerDiv : document.getElementById ('header'),
             headerButtonsDiv : document.getElementById ('header_buttons'),
             toolbarDiv : document.getElementById ('toolbar'),
@@ -81,7 +88,7 @@ export function StartWebsite (externalLibLocation)
             fileInput : document.getElementById ('open_file'),
             sidebarMenu : document.getElementById ('sidebarMenu')
         });
-        website.Load ();
+        WebsiteOuter.Load ();
 //    });
 }
 
